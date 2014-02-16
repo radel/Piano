@@ -1,0 +1,691 @@
+
+<html>
+<head>
+  <title>{Title}</title>
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+  <meta name="text:Link 1 Name" content=""/>
+  <meta name="text:Link 1 URL" content=""/>
+
+  <meta name="text:Link 2 Name" content=""/>
+  <meta name="text:Link 2 URL" content=""/>
+
+  <meta name="text:Link 3 Name" content=""/>
+  <meta name="text:Link 3 URL" content=""/>
+
+
+  <link href="http://static.tumblr.com/lv44vnw/qK7n13wtd/foundation.min.css" rel='stylesheet' type='text/css'>
+  <link href="http://static.tumblr.com/lv44vnw/azLn13wte/normalize.css" rel='stylesheet' type='text/css'>
+  <link href="http://static.tumblr.com/3mbebsn/etDmlkhwl/flat-ui.css" rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato:200,300,400,700' rel='stylesheet' type='text/css'>
+
+  {block:Description}
+  <meta name="description" content="{MetaDescription}" />
+  {/block:Description}
+
+
+
+  <style>
+
+   @font-face {
+    font-family: "Flat-UI-Icons-16";
+    src: url("http://static.tumblr.com/3mbebsn/yATmlkpj8/flat-ui-icons-16.eot");
+    src: url("http://static.tumblr.com/3mbebsn/yATmlkpj8/flat-ui-icons-16.eot?#iefix") format("embedded-opentype"), url("http://static.tumblr.com/3mbebsn/nYsmlkpk4/flat-ui-icons-16.woff") format("woff"), url("http://static.tumblr.com/3mbebsn/zSBmlkpkn/flat-ui-icons-16.ttf") format("truetype"), url("http://static.tumblr.com/3mbebsn/rkrmlkpl3/flat-ui-icons-16.dev.svg#Flat-UI-Icons-16") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+
+    body {
+      font-family:'Lato';
+    }
+
+    .top-bar {
+
+      text-transform: uppercase;
+      background: #111;
+
+    }
+
+    a {text-decoration:none;}
+    
+    .top-bar-section li:not(.has-form) a:not(.button) {
+      background: #111;
+      text-decoration:none;
+      font-size: 12px;
+      font-weight: bold;
+    } 
+    
+
+
+    #posts {
+      padding-top:52px;
+      width:100%;
+      margin-left:0px;
+
+    }
+    
+    #posts li {
+        border:1px solid #ddd;
+    }
+
+    .top-bar li.name h1 a {
+      text-decoration: none;
+      font-weight: 200;
+      color:#eee;
+      font-family:'Lato';
+
+    }
+
+    .notes-overlay {
+      position:absolute;
+      bottom:0px;
+      background: -moz-linear-gradient(top,  rgba(0,0,0,0) 11%, rgba(0,0,0,0.58) 90%, rgba(0,0,0,0.65) 98%, rgba(0,0,0,0.75) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(11%,rgba(0,0,0,0)), color-stop(90%,rgba(0,0,0,0.58)), color-stop(98%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+
+      width:100%;
+      visibility: hidden;
+      color:#fff;
+      padding:30px 10px 5px 10px; 
+    }
+
+    .notes-overlay a {
+      color:#fff;
+      font-weight: bold;
+    }
+
+    .post:hover .notes-overlay {
+      visibility: visible;
+    }
+
+    ol {
+      list-style: none;
+      list-style-type: none;
+    }
+
+    ul.tags {
+      list-style: none;
+    }
+
+    ul.tags li {float:left;}
+
+    .post iframe {
+
+      max-width: 100%;
+    }
+
+    footer {
+      padding:15px;
+    }
+
+    .perma {
+      display: none;
+    }
+
+    .large {
+      width:500px !important;
+    }
+
+    .backtop {
+      position: fixed;
+      bottom:20px;
+      right:20px;
+      z-index: 10000;
+      width:60px;
+    }
+
+    li.text, li.quote, li.chat, li.link, li.audio { padding: 15px;}
+
+    {CustomCSS}
+
+
+  </style>
+
+
+</head>
+<body>
+
+
+
+ <header>
+
+
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1> <a class="brand" href="/">{Title}</a></h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+
+
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <li><a href="/archive">archive</a></li>       
+        <li><a href="{RSS}">feed</a></li>       
+        {block:AskEnabled}
+        <li><a href="/ask">{AskLabel}</a></li> 
+        {/block:AskEnabled}
+        <li ><a href="http://tumblr.bazinga.com">my tumblr</a></li>
+        <li ><a href="http://www.tumblr.com/themes/by/radel">themes</a></li>
+        {block:IfLink1Name}<a href="{text:link 1 url}>{text:link 1 name}</a>{/block:IfLink1Name}
+        {block:IfLink2Name}<a href="{text:link 2 url}>{text:link 2 name}</a>{/block:IfLink2Name}
+        {block:IfLink3Name}<a href="{text:link 3 url}"class="nav">{text:link 3 name}</a>{/block:IfLink3Name}
+      </ul>
+    </section>
+  </nav>
+
+
+
+
+
+
+
+
+
+  
+
+</header>
+
+
+
+
+<div>
+
+  <ol id="posts" class="row">
+    {block:Posts}
+    {block:Text}
+    <li class="post large-4 text">
+      <div class="columns">
+
+      {block:Title}
+      <h3><a href="{Permalink}">{Title}</a></h3>
+      {/block:Title}
+
+      {Body}
+
+     <div class="row">
+   <div class="large-12">
+     {block:HasTags}
+
+       <ul class="tags">
+         {block:Tags}
+         <li>
+           <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+         </li>
+         {/block:Tags}
+       </ul>
+
+    
+   </div>
+   {/block:HasTags}
+
+   <div class="large-6 columns">
+     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+   </div>
+   <div class="large-6 columns">
+     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+   </div>
+
+
+ {block:PermalinkPage}
+ <div class="large-12 columns">
+   {PostNotes-16}
+ </div>
+
+ {/block:PermalinkPage}
+  </div>
+      </div>
+  </li>
+  {/block:Text}
+
+  {block:Photo}
+  <li class="post large-4 {block:PermalinkPage} large {/block:PermalinkPage} photo">
+   
+     <a href="{Permalink}"> <img src="{PhotoURL-500}" alt="{PhotoAlt}"/></a>
+     <div class="notes-overlay {block:PermalinkPage} perma {/block:PermalinkPage}">
+      <div class="row">
+       <div class="large-6 columns">
+        {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+      </div>
+      <div class="large-6 columns">
+        {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+      </div>
+    </div>  
+  </div>
+
+  {block:PermalinkPage}
+
+  {block:Caption}
+  <div class="large-12 caption">{Caption}</div>
+  {/block:Caption}
+
+  {block:HasTags}
+  <div class="row">   
+    <ul class="tags">
+      {block:Tags}
+      <li>
+        <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+      </li>
+      {/block:Tags}
+    </ul>
+  </div>
+  {/block:HasTags}
+  <div class="row">
+     <div class="large-6 columns">
+      {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+    </div>
+      <div class="large-6 columns">
+      {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+    </div>
+  </div>
+  <div class="large-12 columns">
+    {PostNotes-16}
+  </div>
+</div>
+{/block:PermalinkPage}
+
+</li>
+{/block:Photo}
+
+{block:Panorama}
+<li class="post large-4 panorama">
+  <div class="row">
+    {LinkOpenTag}
+    <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+    {LinkCloseTag}
+
+    <div class="notes-overlay {block:PermalinkPage} perma {/block:PermalinkPage}">
+      <div class="row">
+         <div class="large-6 columns">
+        {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+      </div>
+       <div class="large-6 columns">
+        {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+      </div>
+    </div>  
+  </div>
+
+  {block:PermalinkPage}
+
+  {block:Caption}
+  <div class="large-12 caption">{Caption}</div>
+  {/block:Caption}
+  <div class="large-12">
+   {block:HasTags}
+   <ul class="tags">
+    {block:Tags}
+    <li>
+      <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+    </li>
+    {/block:Tags}
+  </ul>
+  {/block:HasTags}
+</div>
+<div class="row">
+   <div class="large-6 columns">
+    {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+  </div>
+   <div class="large-6 columns">
+    {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+  </div>
+  <div class="large-12">
+    {PostNotes-16}
+  </div>
+</div>
+{/block:PermalinkPage}
+</div>
+</li>
+{/block:Panorama}
+
+{block:Photoset}
+<li class="post large-4 photoset">
+  <div class="row">
+    {Photoset-250}
+
+    <div class="notes-overlay {block:PermalinkPage} perma {/block:PermalinkPage}">
+      <div>
+        <div class="large-6 columns">
+        {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+      </div>
+       <div class="large-6 columns">
+        {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+      </div>
+    </div>  
+  </div>
+
+  {block:PermalinkPage}
+
+  {block:Caption}
+  <div class="large-12 caption">{Caption}</div>
+  {/block:Caption}
+  <div class="large-12">
+   {block:HasTags}
+   <ul class="tags">
+    {block:Tags}
+    <li>
+      <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+    </li>
+    {/block:Tags}
+  </ul>
+  {/block:HasTags}
+</div>
+<div class="row">
+    <div class="large-6 columns">
+    {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+  </div>
+    <div class="large-6 columns">
+    {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+  </div>
+  <div class="large-12">
+    {PostNotes-16}
+  </div>
+</div>
+{/block:PermalinkPage}
+</div>
+</li>
+{/block:Photoset}
+
+{block:Quote}
+<li class="post large-4 quote">
+
+
+  <div class="columns">
+    "{Quote}"
+
+    {block:Source}
+    <div class="source">{Source}</div>
+    {/block:Source}
+    
+     <div class="row">
+   <div class="large-12">
+     {block:HasTags}
+
+       <ul class="tags">
+         {block:Tags}
+         <li>
+           <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+         </li>
+         {/block:Tags}
+       </ul>
+
+    
+   </div>
+   {/block:HasTags}
+
+   <div class="large-6 columns">
+     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+   </div>
+   <div class="large-6 columns">
+     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+   </div>
+
+
+ {block:PermalinkPage}
+ <div class="large-12 columns">
+   {PostNotes-16}
+ </div>
+
+ {/block:PermalinkPage}
+  </div>
+      </div>
+</li>
+{/block:Quote}
+
+{block:Link}
+<li class="post large-4 link">
+<div class="columns">
+  <a href="{URL}" class="link" {Target}>{Name}</a>
+
+  {block:Description}
+  <div class="description">{Description}</div>
+  {/block:Description}
+
+      <div class="row">
+   <div class="large-12">
+     {block:HasTags}
+
+       <ul class="tags">
+         {block:Tags}
+         <li>
+           <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+         </li>
+         {/block:Tags}
+       </ul>
+
+    
+   </div>
+   {/block:HasTags}
+
+   <div class="large-6 columns">
+     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+   </div>
+   <div class="large-6 columns">
+     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+   </div>
+
+
+ {block:PermalinkPage}
+ <div class="large-12 columns">
+   {PostNotes-16}
+ </div>
+
+ {/block:PermalinkPage}
+  </div>
+      </div>
+</li>
+{/block:Link}
+
+{block:Chat}
+<li class="post large-4 chat">
+  
+<div class="columns">
+  {block:Title}
+  <h3><a href="{Permalink}">{Title}</a></h3>
+  {/block:Title}
+
+  <ul class="chat">
+    {block:Lines}
+    <li class="{Alt} user_{UserNumber}">
+      {block:Label}
+      <span class="label">{Label}</span>
+      {/block:Label}
+
+      {Line}
+    </li>
+    {/block:Lines}
+    </ul>
+        <div class="row">
+   <div class="large-12">
+     {block:HasTags}
+
+       <ul class="tags">
+         {block:Tags}
+         <li>
+           <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+         </li>
+         {/block:Tags}
+       </ul>
+
+    
+   </div>
+   {/block:HasTags}
+
+   <div class="large-6 columns">
+     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+   </div>
+   <div class="large-6 columns">
+     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+   </div>
+
+
+ {block:PermalinkPage}
+ <div class="large-12 columns">
+   {PostNotes-16}
+ </div>
+
+ {/block:PermalinkPage}
+  </div>
+      </div>
+</li>
+{/block:Chat}
+
+{block:Video}
+<li class="post large-4 video">
+ 
+  {Video-500}
+
+  {block:Caption}
+  <div class="caption">{Caption}</div>
+  {/block:Caption}
+  <div class="columns">
+     <div class="row">
+   <div class="large-12">
+     {block:HasTags}
+
+       <ul class="tags">
+         {block:Tags}
+         <li>
+           <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+         </li>
+         {/block:Tags}
+       </ul>
+
+    
+   </div>
+   {/block:HasTags}
+
+   <div class="large-6 columns">
+     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+   </div>
+   <div class="large-6 columns">
+     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+   </div>
+
+
+ {block:PermalinkPage}
+ <div class="large-12 columns">
+   {PostNotes-16}
+ </div>
+
+ {/block:PermalinkPage}
+  </div>
+      </div>
+  
+</li>
+{/block:Video}
+
+{block:Audio}
+<li class="post large-4 audio">
+<div class="columns">
+  {AudioPlayerBlack}
+
+  {block:Caption}
+  <div class="caption">{Caption}</div>
+  {/block:Caption}
+       <div class="row">
+   <div class="large-12">
+     {block:HasTags}
+
+       <ul class="tags">
+         {block:Tags}
+         <li>
+           <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+         </li>
+         {/block:Tags}
+       </ul>
+
+    
+   </div>
+   {/block:HasTags}
+
+   <div class="large-6 columns">
+     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+   </div>
+   <div class="large-6 columns">
+     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+   </div>
+
+
+ {block:PermalinkPage}
+ <div class="large-12 columns">
+   {PostNotes-16}
+ </div>
+
+ {/block:PermalinkPage}
+  </div>
+      </div>
+</li>
+{/block:Audio}
+{/block:Posts}
+</ol>
+
+<div class="sidenext">
+ {block:PreviousPage}
+ <a href="{PreviousPage}">&#171; Previous</a>
+
+ {/block:PreviousPage}
+
+ {block:NextPage}
+ <div id="page-nav"><a href="{NextPage}">Next &#187;</a></div>
+ {/block:NextPage}
+
+</div>
+
+<a class="btn btn-large btn-block btn-inverse backtop" href="#posts">^</a>
+
+<footer>
+  <div class="row-fluid">       
+   <div class="span9"><i class="fui-cmd-16"> </i> Powered by <a href="http://tumblr.com/">Tumblr</a>. 
+    copyright {CopyrightYears} {Title}
+  </div>
+  <div class="span3"> <i class="fui-man-16"> </i> theme by <a href="http://tumblr.bazinga.it">Marco Bonomo</a></div>
+
+</div>      
+</footer>
+</div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="http://static.tumblr.com/bswe8t6/UFVlryaq2/jquerymsnryv2.js"></script>
+<script type="text/javascript">
+  $(window).load(function(){
+    var $wall = $('#posts');
+    $wall.imagesLoaded(function(){
+      $wall.masonry({
+        itemSelector: '.post',
+        isAnimated : false
+      });
+    });
+
+    $wall.infinitescroll({
+      navSelector    : '#page-nav',
+      nextSelector   : '#page-nav a',
+      itemSelector   : '.post',
+      bufferPx       : 2000,
+      debug          : false,
+      errorCallback: function() {
+        $('#infscr-loading').fadeOut('normal');
+      }},
+      function( newElements ) {
+        var $newElems = $( newElements );
+        $newElems.hide();
+        $newElems.imagesLoaded(function(){
+          $wall.masonry( 'appended', $newElems,{isAnimated: false}, function(){$newElems.fadeIn('slow');} );
+        });
+      }); $('#posts').show(500);
+  });
+</script>
+
+
+
+
+</body>
+</html>
