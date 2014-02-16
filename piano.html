@@ -58,14 +58,14 @@
 
 
     #posts {
-      padding-top:52px;
+      padding-top:45px;
       width:100%;
       margin-left:0px;
 
     }
     
     #posts li {
-        border:1px solid #ddd;
+       
     }
 
     .top-bar li.name h1 a {
@@ -113,6 +113,8 @@
     }
 
     ul.tags li {float:left;}
+    
+    ul.tags li a { margin-right:3px; background:#bbb; text-shadow:0px 0px 1px rgba(0,0,0,.2);}
 
     .post iframe {
 
@@ -138,6 +140,10 @@
       z-index: 10000;
       width:60px;
     }
+    
+    ul.chat {
+        margin-bottom:20px;
+    }
 
     li.text, li.quote, li.chat, li.link, li.audio { padding: 15px;}
 
@@ -154,7 +160,7 @@
 
  <header>
 
-
+<div class="fixed">
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <li class="name">
@@ -182,16 +188,7 @@
       </ul>
     </section>
   </nav>
-
-
-
-
-
-
-
-
-
-  
+</div>
 
 </header>
 
@@ -503,6 +500,7 @@
     </li>
     {/block:Lines}
     </ul>
+    
         <div class="row">
    <div class="large-12">
      {block:HasTags}
@@ -640,7 +638,7 @@
 
 </div>
 
-<a class="btn btn-large btn-block btn-inverse backtop" href="#posts">^</a>
+<a class="button secondary round backtop" href="#posts">^</a>
 
 <footer>
   <div class="row-fluid">       
