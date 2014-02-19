@@ -35,122 +35,152 @@
     font-weight: normal;
     font-style: normal; }
 
-    body {
+    * {
       font-family:'Lato';
     }
 
     .top-bar {
+     font-family:"Lato";
+     text-transform: uppercase;
+     background: #111;
+     font-size:14px;
 
-      text-transform: uppercase;
-      background: #111;
+   }
 
-    }
+   a {text-decoration:none;}
+   a.permalink { color:#3e5771; }
 
-    a {text-decoration:none;}
-    
-    .top-bar-section li:not(.has-form) a:not(.button) {
-      background: #111;
-      text-decoration:none;
-      font-size: 12px;
-      font-weight: bold;
-    } 
-    
+   h1,h2,h3,h4,h5,h6 {
+    font-family:'Lato';
+  }
 
+  .source {
+    font-size:12px;
+    text-align:right;
+    font-style:italic;
+    margin-bottom:20px;
+  }
 
-    #posts {
-      padding-top:45px;
+  .top-bar-section li:not(.has-form) a:not(.button) {
+    background: #111;
+    text-decoration:none;
+    font-size: 12px;
+    font-weight: bold;
+  } 
+
+  .row {
       width:100%;
-      margin-left:0px;
+      max-width:98%;
+  }
 
-    }
+  #posts {
+    padding-top:45px;
+    width:100%;
+    margin-left:0px;
+
+  }
+
+  #posts li {
+
+  }
+
+  .top-bar li.name h1 a {
+    text-decoration: none;
+    font-weight: 200;
+    color:#eee;
+    font-family:'Lato';
+
+  }
+
+  .notes-overlay {
+    position:absolute;
+    bottom:0px;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 11%, rgba(0,0,0,0.58) 90%, rgba(0,0,0,0.65) 98%, rgba(0,0,0,0.75) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(11%,rgba(0,0,0,0)), color-stop(90%,rgba(0,0,0,0.58)), color-stop(98%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+
+    width:100%;
+    visibility: hidden;
+    color:#fff;
+    padding:30px 10px 5px 10px; 
+  }
+
+  .notes-overlay a {
+    color:#fff;
+    font-weight: bold;
+  }
+
+  .post:hover .notes-overlay {
+    visibility: visible;
+  }
+
+  ol {
+      float:left;
+    list-style: none;
+    list-style-type: none;
+  }
+
+  ul.tags {
+    float:left;
+    margin-left:15px;
+    list-style: none;
+    padding-bottom:10px;
+  }
+
+  ul.tags li {float:left;      }
+
+  ul.tags li a { margin-right:3px; background:#bbb; text-shadow:0px 0px 1px rgba(0,0,0,.2);}
+
+  .post iframe {
+
+    max-width: 100%;
+  }
+
+  footer {
+     float:left;
+      margin-top:45px;
+  padding:15px;
+    background:ddd;
+
+  }
+
+  .perma {
+    display: none;
+  }
     
-    #posts li {
-       
+    .permapage {
+        padding:15px;
     }
 
-    .top-bar li.name h1 a {
-      text-decoration: none;
-      font-weight: 200;
-      color:#eee;
-      font-family:'Lato';
+  .large {
+    width:500px !important;
+  }
 
-    }
+  .backtop {
+    position: fixed;
+    bottom:20px;
+    right:20px;
+    z-index: 10000;
+    width:60px;
+  }
 
-    .notes-overlay {
-      position:absolute;
-      bottom:0px;
-      background: -moz-linear-gradient(top,  rgba(0,0,0,0) 11%, rgba(0,0,0,0.58) 90%, rgba(0,0,0,0.65) 98%, rgba(0,0,0,0.75) 100%); /* FF3.6+ */
-      background: -webkit-gradient(linear, left top, left bottom, color-stop(11%,rgba(0,0,0,0)), color-stop(90%,rgba(0,0,0,0.58)), color-stop(98%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
-      background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* Chrome10+,Safari5.1+ */
-      background: -o-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* Opera 11.10+ */
-      background: -ms-linear-gradient(top,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* IE10+ */
-      background: linear-gradient(to bottom,  rgba(0,0,0,0) 11%,rgba(0,0,0,0.58) 90%,rgba(0,0,0,0.65) 98%,rgba(0,0,0,0.75) 100%); /* W3C */
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+  ul.chat {
+    margin-bottom:20px;
+  }
 
+  li.text, li.quote, li.chat, li.link, li.audio { padding: 15px;  border-bottom:1px solid #ddd;}
+  
+  li.photo, li.photoset, li.panorama {border-bottom:1px solid #ddd;}
 
-      width:100%;
-      visibility: hidden;
-      color:#fff;
-      padding:30px 10px 5px 10px; 
-    }
-
-    .notes-overlay a {
-      color:#fff;
-      font-weight: bold;
-    }
-
-    .post:hover .notes-overlay {
-      visibility: visible;
-    }
-
-    ol {
-      list-style: none;
-      list-style-type: none;
-    }
-
-    ul.tags {
-      list-style: none;
-    }
-
-    ul.tags li {float:left;}
-    
-    ul.tags li a { margin-right:3px; background:#bbb; text-shadow:0px 0px 1px rgba(0,0,0,.2);}
-
-    .post iframe {
-
-      max-width: 100%;
-    }
-
-    footer {
-      padding:15px;
-    }
-
-    .perma {
-      display: none;
-    }
-
-    .large {
-      width:500px !important;
-    }
-
-    .backtop {
-      position: fixed;
-      bottom:20px;
-      right:20px;
-      z-index: 10000;
-      width:60px;
-    }
-    
-    ul.chat {
-        margin-bottom:20px;
-    }
-
-    li.text, li.quote, li.chat, li.link, li.audio { padding: 15px;}
-
-    {CustomCSS}
+  {CustomCSS}
 
 
-  </style>
+</style>
 
 
 </head>
@@ -160,48 +190,48 @@
 
  <header>
 
-<div class="fixed">
-  <nav class="top-bar" data-topbar>
-    <ul class="title-area">
-      <li class="name">
-        <h1> <a class="brand" href="/">{Title}</a></h1>
-      </li>
-      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-    </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-
-
-      <!-- Left Nav Section -->
-      <ul class="left">
-        <li><a href="/archive">archive</a></li>       
-        <li><a href="{RSS}">feed</a></li>       
-        {block:AskEnabled}
-        <li><a href="/ask">{AskLabel}</a></li> 
-        {/block:AskEnabled}
-        <li ><a href="http://tumblr.bazinga.com">my tumblr</a></li>
-        <li ><a href="http://www.tumblr.com/themes/by/radel">themes</a></li>
-        {block:IfLink1Name}<a href="{text:link 1 url}>{text:link 1 name}</a>{/block:IfLink1Name}
-        {block:IfLink2Name}<a href="{text:link 2 url}>{text:link 2 name}</a>{/block:IfLink2Name}
-        {block:IfLink3Name}<a href="{text:link 3 url}"class="nav">{text:link 3 name}</a>{/block:IfLink3Name}
+  <div class="fixed">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1> <a class="brand" href="/">{Title}</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
       </ul>
-    </section>
-  </nav>
-</div>
+
+      <section class="top-bar-section">
+        <!-- Right Nav Section -->
+
+
+        <!-- Left Nav Section -->
+        <ul class="left">
+          <li><a href="/archive">archive</a></li>       
+          <li><a href="{RSS}">feed</a></li>       
+          {block:AskEnabled}
+          <li><a href="/ask">{AskLabel}</a></li> 
+          {/block:AskEnabled}
+          <li ><a href="http://tumblr.bazinga.com">my tumblr</a></li>
+          <li ><a href="http://www.tumblr.com/themes/by/radel">themes</a></li>
+          {block:IfLink1Name}<a href="{text:link 1 url}>{text:link 1 name}</a>{/block:IfLink1Name}
+          {block:IfLink2Name}<a href="{text:link 2 url}>{text:link 2 name}</a>{/block:IfLink2Name}
+          {block:IfLink3Name}<a href="{text:link 3 url}"class="nav">{text:link 3 name}</a>{/block:IfLink3Name}
+        </ul>
+      </section>
+    </nav>
+  </div>
 
 </header>
 
 
 
 
-<div>
 
-  <ol id="posts" class="row">
-    {block:Posts}
-    {block:Text}
-    <li class="post large-4 text">
-      <div class="columns">
+<div class="row">
+<ol id="posts" class="">
+  {block:Posts}
+  {block:Text}
+  <li class="post large-3 medium-4 {block:PermalinkPage} large-6 permapage {/block:PermalinkPage} text">
+    <div class="columns">
 
       {block:Title}
       <h3><a href="{Permalink}">{Title}</a></h3>
@@ -209,84 +239,83 @@
 
       {Body}
 
-     <div class="row">
-   <div class="large-12">
-     {block:HasTags}
-
-       <ul class="tags">
-         {block:Tags}
-         <li>
-           <a class="label label-inverse" href="{TagURL}">{Tag}</a>
-         </li>
-         {/block:Tags}
-       </ul>
-
-    
-   </div>
-   {/block:HasTags}
-
-   <div class="large-6 columns">
-     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-   </div>
-   <div class="large-6 columns">
-     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
-   </div>
-
-
- {block:PermalinkPage}
- <div class="large-12 columns">
-   {PostNotes-16}
- </div>
-
- {/block:PermalinkPage}
-  </div>
-      </div>
-  </li>
-  {/block:Text}
-
-  {block:Photo}
-  <li class="post large-4 {block:PermalinkPage} large {/block:PermalinkPage} photo">
-   
-     <a href="{Permalink}"> <img src="{PhotoURL-500}" alt="{PhotoAlt}"/></a>
-     <div class="notes-overlay {block:PermalinkPage} perma {/block:PermalinkPage}">
       <div class="row">
+       <div class="large-12">
+         {block:HasTags}
+
+         <ul class="tags">
+           {block:Tags}
+           <li>
+             <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+           </li>
+           {/block:Tags}
+         </ul>
+
+
+       </div>
+       {/block:HasTags}
+
        <div class="large-6 columns">
-        {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+        {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
       </div>
       <div class="large-6 columns">
-        {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
-      </div>
-    </div>  
-  </div>
+       {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</a> {/block:Date}
+     </div>
 
-  {block:PermalinkPage}
 
-  {block:Caption}
-  <div class="large-12 caption">{Caption}</div>
-  {/block:Caption}
+{block:PermalinkPage}
 
-  {block:HasTags}
-  <div class="row">   
-    <ul class="tags">
-      {block:Tags}
-      <li>
-        <a class="label label-inverse" href="{TagURL}">{Tag}</a>
-      </li>
-      {/block:Tags}
-    </ul>
-  </div>
-  {/block:HasTags}
+<div class="large-12">
+  {PostNotes-16}
+</div>
+{/block:PermalinkPage}
+   </div>
+ </div>
+</li>
+{/block:Text}
+
+{block:Photo}
+<li class="post large-3 medium-4 {block:PermalinkPage} large-6 permapage {/block:PermalinkPage} photo">
+
+ <a href="{Permalink}"> <img src="{PhotoURL-500}" alt="{PhotoAlt}"/></a>
+ <div class="notes-overlay {block:PermalinkPage} perma {/block:PermalinkPage}">
   <div class="row">
-     <div class="large-6 columns">
-      {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-    </div>
-      <div class="large-6 columns">
-      {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
-    </div>
+   <div class="large-6 columns">
+     {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+   </div>
+   <div class="large-6 columns">
+    {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</a> {/block:Date}
   </div>
-  <div class="large-12 columns">
-    {PostNotes-16}
-  </div>
+</div>  
+</div>  
+
+{block:PermalinkPage}
+
+{block:Caption}
+<div class="large-12 columns caption">{Caption}</div>
+{/block:Caption}
+
+{block:HasTags}
+  
+  <ul class="large-12 columns tags">
+    {block:Tags}
+    <li>
+      <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+    </li>
+    {/block:Tags}
+  </ul>
+
+{/block:HasTags}
+
+ <div class="large-6 columns">
+  {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+</div>
+<div class="large-6 columns">
+  {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</a> {/block:Date}
+</div>
+
+<div class="large-12 ">
+  {PostNotes-16}
 </div>
 {/block:PermalinkPage}
 
@@ -294,7 +323,7 @@
 {/block:Photo}
 
 {block:Panorama}
-<li class="post large-4 panorama">
+<li class="post large-3 medium-4 {block:PermalinkPage} large-6 permapage {/block:PermalinkPage} panorama">
   <div class="row">
     {LinkOpenTag}
     <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
@@ -302,11 +331,11 @@
 
     <div class="notes-overlay {block:PermalinkPage} perma {/block:PermalinkPage}">
       <div class="row">
-         <div class="large-6 columns">
-        {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-      </div>
        <div class="large-6 columns">
-        {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+        {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+      </div>
+      <div class="large-6 columns">
+        {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</A {/block:Date}
       </div>
     </div>  
   </div>
@@ -328,15 +357,15 @@
   {/block:HasTags}
 </div>
 <div class="row">
-   <div class="large-6 columns">
-    {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-  </div>
-   <div class="large-6 columns">
-    {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
-  </div>
-  <div class="large-12">
-    {PostNotes-16}
-  </div>
+ <div class="large-6 columns">
+  {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+</div>
+<div class="large-6 columns">
+  {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</A {/block:Date}
+</div>
+<div class="large-12">
+  {PostNotes-16}
+</div>
 </div>
 {/block:PermalinkPage}
 </div>
@@ -344,43 +373,43 @@
 {/block:Panorama}
 
 {block:Photoset}
-<li class="post large-4 photoset">
+<li class="post large-3 medium-4 photoset">
   <div class="row">
     {Photoset-250}
 
     <div class="notes-overlay {block:PermalinkPage} perma {/block:PermalinkPage}">
       <div>
         <div class="large-6 columns">
-        {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-      </div>
-       <div class="large-6 columns">
-        {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
-      </div>
-    </div>  
-  </div>
+          {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+        </div>
+        <div class="large-6 columns">
+          {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</A {/block:Date}
+        </div>
+      </div>  
+    </div>
 
-  {block:PermalinkPage}
+    {block:PermalinkPage}
 
-  {block:Caption}
-  <div class="large-12 caption">{Caption}</div>
-  {/block:Caption}
-  <div class="large-12">
-   {block:HasTags}
-   <ul class="tags">
-    {block:Tags}
-    <li>
-      <a class="label label-inverse" href="{TagURL}">{Tag}</a>
-    </li>
-    {/block:Tags}
-  </ul>
-  {/block:HasTags}
-</div>
-<div class="row">
-    <div class="large-6 columns">
-    {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
+    {block:Caption}
+    <div class="large-12 caption">{Caption}</div>
+    {/block:Caption}
+    <div class="large-12">
+     {block:HasTags}
+     <ul class="tags">
+      {block:Tags}
+      <li>
+        <a class="label label-inverse" href="{TagURL}">{Tag}</a>
+      </li>
+      {/block:Tags}
+    </ul>
+    {/block:HasTags}
   </div>
+  <div class="row">
     <div class="large-6 columns">
-    {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+     {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+   </div>
+   <div class="large-6 columns">
+    {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</A {/block:Date}
   </div>
   <div class="large-12">
     {PostNotes-16}
@@ -392,19 +421,19 @@
 {/block:Photoset}
 
 {block:Quote}
-<li class="post large-4 quote">
+<li class="post large-3 medium-4 {block:PermalinkPage} large-6 permapage {/block:PermalinkPage} quote">
 
 
   <div class="columns">
-    "{Quote}"
+    <h2 class="quote">{Quote}"</h2>
 
     {block:Source}
     <div class="source">{Source}</div>
     {/block:Source}
     
-     <div class="row">
-   <div class="large-12">
-     {block:HasTags}
+    <div class="row">
+     <div class="large-12">
+       {block:HasTags}
 
        <ul class="tags">
          {block:Tags}
@@ -414,41 +443,41 @@
          {/block:Tags}
        </ul>
 
-    
-   </div>
-   {/block:HasTags}
 
-   <div class="large-6 columns">
-     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-   </div>
-   <div class="large-6 columns">
-     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+     </div>
+     {/block:HasTags}
+
+     <div class="large-6 columns">
+      {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+    </div>
+    <div class="large-6 columns">
+     {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</a> {/block:Date}
    </div>
 
 
- {block:PermalinkPage}
- <div class="large-12 columns">
-   {PostNotes-16}
+   {block:PermalinkPage}
+   <div class="large-12">
+     {PostNotes-16}
+   </div>
+
+   {/block:PermalinkPage}
  </div>
-
- {/block:PermalinkPage}
-  </div>
-      </div>
+</div>
 </li>
 {/block:Quote}
 
 {block:Link}
-<li class="post large-4 link">
-<div class="columns">
-  <a href="{URL}" class="link" {Target}>{Name}</a>
+<li class="post large-3 medium-4 {block:PermalinkPage} large-6 permapage {/block:PermalinkPage} link">
+  <div class="columns">
+    <a href="{URL}" class="link" {Target}>{Name}</a>
 
-  {block:Description}
-  <div class="description">{Description}</div>
-  {/block:Description}
+    {block:Description}
+    <div class="description">{Description}</div>
+    {/block:Description}
 
-      <div class="row">
-   <div class="large-12">
-     {block:HasTags}
+    <div class="row">
+     <div class="large-12">
+       {block:HasTags}
 
        <ul class="tags">
          {block:Tags}
@@ -458,52 +487,52 @@
          {/block:Tags}
        </ul>
 
-    
-   </div>
-   {/block:HasTags}
 
-   <div class="large-6 columns">
-     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-   </div>
-   <div class="large-6 columns">
-     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+     </div>
+     {/block:HasTags}
+
+     <div class="large-6 columns">
+      {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+    </div>
+    <div class="large-6 columns">
+     {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</a> {/block:Date}
    </div>
 
 
- {block:PermalinkPage}
- <div class="large-12 columns">
-   {PostNotes-16}
+   {block:PermalinkPage}
+   <div class="large-12 ">
+     {PostNotes-16}
+   </div>
+
+   {/block:PermalinkPage}
  </div>
-
- {/block:PermalinkPage}
-  </div>
-      </div>
+</div>
 </li>
 {/block:Link}
 
 {block:Chat}
-<li class="post large-4 chat">
-  
-<div class="columns">
-  {block:Title}
-  <h3><a href="{Permalink}">{Title}</a></h3>
-  {/block:Title}
+<li class="post large-3 medium-4 {block:PermalinkPage} large-6 permapage {/block:PermalinkPage} chat">
 
-  <ul class="chat">
-    {block:Lines}
-    <li class="{Alt} user_{UserNumber}">
-      {block:Label}
-      <span class="label">{Label}</span>
-      {/block:Label}
+  <div class="columns">
+    {block:Title}
+    <h3><a href="{Permalink}">{Title}</a></h3>
+    {/block:Title}
 
-      {Line}
-    </li>
-    {/block:Lines}
+    <ul class="chat">
+      {block:Lines}
+      <li class="{Alt} user_{UserNumber}">
+        {block:Label}
+        <span class="label">{Label}</span>
+        {/block:Label}
+
+        {Line}
+      </li>
+      {/block:Lines}
     </ul>
     
-        <div class="row">
-   <div class="large-12">
-     {block:HasTags}
+    <div class="row">
+     <div class="large-12">
+       {block:HasTags}
 
        <ul class="tags">
          {block:Tags}
@@ -513,41 +542,41 @@
          {/block:Tags}
        </ul>
 
-    
-   </div>
-   {/block:HasTags}
 
-   <div class="large-6 columns">
-     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-   </div>
-   <div class="large-6 columns">
-     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+     </div>
+     {/block:HasTags}
+
+     <div class="large-6 columns">
+      {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+    </div>
+    <div class="large-6 columns">
+     {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</a> {/block:Date}
    </div>
 
 
- {block:PermalinkPage}
- <div class="large-12 columns">
-   {PostNotes-16}
+   {block:PermalinkPage}
+   <div class="large-12">
+     {PostNotes-16}
+   </div>
+
+   {/block:PermalinkPage}
  </div>
-
- {/block:PermalinkPage}
-  </div>
-      </div>
+</div>
 </li>
 {/block:Chat}
 
 {block:Video}
-<li class="post large-4 video">
- 
-  {Video-500}
+<li class="post large-3 medium-4 {block:PermalinkPage} large-6 permapage {/block:PermalinkPage} video">
 
-  {block:Caption}
-  <div class="caption">{Caption}</div>
-  {/block:Caption}
+  {Video-500}
   <div class="columns">
-     <div class="row">
-   <div class="large-12">
-     {block:HasTags}
+    {block:Caption}
+    <div class="caption">{Caption}</div>
+    {/block:Caption}
+
+    <div class="row">
+     <div class="large-12">
+       {block:HasTags}
 
        <ul class="tags">
          {block:Tags}
@@ -557,41 +586,41 @@
          {/block:Tags}
        </ul>
 
-    
-   </div>
-   {/block:HasTags}
 
-   <div class="large-6 columns">
-     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-   </div>
-   <div class="large-6 columns">
-     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
-   </div>
+     </div>
+     {/block:HasTags}
+
+     <div class="large-6 columns">
+       {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+     </div>
+     <div class="large-6 columns">
+       {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</a> {/block:Date}
+     </div>
 
 
- {block:PermalinkPage}
- <div class="large-12 columns">
-   {PostNotes-16}
+     {block:PermalinkPage}
+     <div class="large-12">
+       {PostNotes-16}
+     </div>
+
+     {/block:PermalinkPage}
+   </div>
  </div>
 
- {/block:PermalinkPage}
-  </div>
-      </div>
-  
 </li>
 {/block:Video}
 
 {block:Audio}
-<li class="post large-4 audio">
-<div class="columns">
-  {AudioPlayerBlack}
+<li class="post large-3 medium-4 {block:PermalinkPage} large-6 permapage {/block:PermalinkPage} audio">
+  <div class="columns">
+    {AudioPlayerBlack}
 
-  {block:Caption}
-  <div class="caption">{Caption}</div>
-  {/block:Caption}
-       <div class="row">
-   <div class="large-12">
-     {block:HasTags}
+    {block:Caption}
+    <div class="caption">{Caption}</div>
+    {/block:Caption}
+    <div class="row">
+     <div class="large-12">
+       {block:HasTags}
 
        <ul class="tags">
          {block:Tags}
@@ -601,55 +630,52 @@
          {/block:Tags}
        </ul>
 
-    
-   </div>
-   {/block:HasTags}
 
-   <div class="large-6 columns">
-     {block:NoteCount} <i class="fui-heart-16"></i> {NoteCount} {/block:NoteCount}
-   </div>
-   <div class="large-6 columns">
-     {block:Date} <i class="fui-time-16"></i> {TimeAgo} {/block:Date}
+     </div>
+     {/block:HasTags}
+
+     <div class="large-6 columns">
+      {block:NoteCount}  <a href="{Permalink}"><i class="fui-heart-16"></i></a> {NoteCount} {/block:NoteCount}
+    </div>
+    <div class="large-6 columns">
+     {block:Date}  <a class="permalink" href="{Permalink}"><i class="fui-time-16"></i> {TimeAgo}</a> {/block:Date}
    </div>
 
 
- {block:PermalinkPage}
- <div class="large-12 columns">
-   {PostNotes-16}
+   {block:PermalinkPage}
+   <div class="large-12">
+     {PostNotes-16}
+   </div>
+
+   {/block:PermalinkPage}
  </div>
-
- {/block:PermalinkPage}
-  </div>
-      </div>
+</div>
 </li>
 {/block:Audio}
 {/block:Posts}
 </ol>
-
-<div class="sidenext">
- {block:PreviousPage}
- <a href="{PreviousPage}">&#171; Previous</a>
-
- {/block:PreviousPage}
-
- {block:NextPage}
- <div id="page-nav"><a href="{NextPage}">Next &#187;</a></div>
- {/block:NextPage}
-
 </div>
-
 <a class="button secondary round backtop" href="#posts">^</a>
+ <div class="sidenext">
+   {block:PreviousPage}
+                <a href="{PreviousPage}">&#171; Previous</a>
+           
+            {/block:PreviousPage}
 
-<footer>
-  <div class="row-fluid">       
-   <div class="span9"><i class="fui-cmd-16"> </i> Powered by <a href="http://tumblr.com/">Tumblr</a>. 
+            {block:NextPage}
+                <div id="page-nav"><a href="{NextPage}">Next &#187;</a></div>
+            {/block:NextPage}
+
+  </div>
+
+<footer class="large-12">  
+   <div class="large-9 columns"><i class="fui-cmd-16"> </i> Powered by <a href="http://tumblr.com/">Tumblr</a>. 
     copyright {CopyrightYears} {Title}
   </div>
-  <div class="span3"> <i class="fui-man-16"> </i> theme by <a href="http://tumblr.bazinga.it">Marco Bonomo</a></div>
+  <div class="large-3 columns"> <i class="fui-man-16"> </i> theme by <a href="http://tumblr.bazinga.it">Marco Bonomo</a></div>
 
-</div>      
 </footer>
-</div>
+
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 <script type="text/javascript" src="http://static.tumblr.com/bswe8t6/UFVlryaq2/jquerymsnryv2.js"></script>
